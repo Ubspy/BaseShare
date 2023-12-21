@@ -10,7 +10,7 @@ execute if score $count BaseSharePlayers = @s BaseSharePlayers run scoreboard pl
 
 # Make new player:
 data modify storage baseshare:tmp NewPlayer set value {}
-execute store result storage baseshare:tmp NewPlayer.PlayerIndex int 1 run scoreboard players get @s BaseSharePlayers
+execute store result storage baseshare:tmp NewPlayer.PlayerID int 1 run scoreboard players get @s BaseSharePlayers
 
 # May need the sign trick here, but idk if it's even worth doing so
 data modify storage baseshare:tmp NewPlayer.PlayerName set from entity @s CustomName
@@ -39,7 +39,7 @@ function baseshare:orderarray
 # {
 #     "Players": [
 #         {
-#			  "PlayerIndex": 0
+#			  "PlayerID": 0
 #             "PlayerName": "Ubspy",
 #             "Bases": [
 #                 {
