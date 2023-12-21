@@ -24,3 +24,35 @@ execute run data remove storage baseshare:tmp NewPlayer
 
 # Reorder the array to have
 function baseshare:orderarray
+
+# TODO: Mutex lock
+# TODO: Make this a github project
+
+# NEW FUNCTION
+# Search to make sure the name doesn't already exist (most likely in a similar fashion to the last recusrion)
+# Add a base using players coordinates
+# Need to decide how to add a base, since you cannot run
+
+# execute as @s run data modify storage baseshare:bases Players[{PlayerName: {selector: "@s"}}] merge string entity @s CustomName
+
+# Datastructure:
+# {
+#     "Players": [
+#         {
+#			  "PlayerIndex": 0
+#             "PlayerName": "Ubspy",
+#             "Bases": [
+#                 {
+#                     "BaseName": "Home",
+#                     "X": 120,
+#                     "Z": -250
+#                 },
+#                 {
+#                     "BaseName": "KFC",
+#                     "X": 165,
+#                     "Z": 107
+#                 }
+#             ]
+#         }
+#     ]
+# }
