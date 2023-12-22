@@ -3,3 +3,5 @@ execute run scoreboard objectives remove TmpVal
 
 execute run data remove storage baseshare:bases Players
 execute run data remove storage baseshare:tmp NewPlayer
+
+function baseshare:load
