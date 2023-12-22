@@ -22,8 +22,13 @@ data modify storage baseshare:bases Players append from storage baseshare:tmp Ne
 # Remove NewPlayer so there's no conflicts
 execute run data remove storage baseshare:tmp NewPlayer
 
-# Reorder the array to have
-function baseshare:orderarray
+# Reorder the array to have the last element of Players be our player
+function baseshare:orderplayers
+
+# Now we want to check and see if this base already exists
+function baseshare:searchbases
+
+# Now, the rest of this function should only happen if we did not find the base
 
 # TODO: Mutex lock
 # TODO: Make this a github project
