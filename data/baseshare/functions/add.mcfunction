@@ -30,6 +30,9 @@ data modify storage baseshare:tmp Search set from storage baseshare:bases Player
 # TODO: We need the base name at baseshare:tmp NewBaseName
 function baseshare:searchbases
 
+# Remove Search, causes bugs if we don't
+data remove storage baseshare:tmp Search
+
 # If it was found, tell the player they can't do that
 execute if score $NotFound TmpVal matches 0 run tellraw @s [{"text":"Could not add base! Base with name "},{"storage":"baseshare:tmp","nbt":"NewBaseName","color":"red"},{"text":" already exists under your name!"}]
 
