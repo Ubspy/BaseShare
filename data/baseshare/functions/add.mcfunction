@@ -26,9 +26,22 @@ execute run data remove storage baseshare:tmp NewPlayer
 function baseshare:orderplayers
 
 # Now we want to check and see if this base already exists
+data modify storage baseshare:tmp Search set from storage baseshare:bases Players[-1].Bases
+# TODO: We need the base name at baseshare:tmp NewBaseName
 function baseshare:searchbases
 
-# Now, the rest of this function should only happen if we did not find the base
+# If it was found, tell the player they can't do that
+execute if score $NotFound TmpVal matches 0 run tellraw @s [{"text":"Could not add base! Base with name "},{"storage":"baseshare:tmp","nbt":"NewBaseName","color":"red"},{"text":" already exists under your name!"}]
+
+# Create NewBase that holds the stuff we want for a new base
+# TODO: I don't know if we should have all this in a new function, but so far I'm keeping it like this
+execute if score $NotFound TmpVal matches 1 run data modify storage baseshare:tmp NewBase.X set from entity @s Pos[0]
+execute if score $NotFound TmpVal matches 1 run data modify storage baseshare:tmp NewBase.Y set from entity @s Pos[1]
+execute if score $NotFound TmpVal matches 1 run data modify storage baseshare:tmp NewBase.Z set from entity @s Pos[2]
+execute if score $NotFound TmpVal matches 1 run data modify storage baseshare:tmp NewBase.BaseName set from storage baseshare:tmp NewBaseName
+
+# Add this to the bases array the player owns
+execute if score $NotFound TmpVal matches 1 run data modify storage baseshare:bases Players[-1].Bases append from storage baseshare:tmp NewBase
 
 # TODO: Mutex lock
 # TODO: Make this a github project
