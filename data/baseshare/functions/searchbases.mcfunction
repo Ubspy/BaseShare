@@ -15,7 +15,7 @@ execute store success score $NotEmpty TmpVal run data get storage baseshare:tmp 
 # If there are none, set $NotFound to 0, because we want to treat it as if it wasn't found
 # We need to do this because writing Compare from a value that doesn't exist will also fail,
 # but not because the comparison matches
-execute if score $Empty TmpVal matches 0 run scoreboard players set $NotFound TmpVal 1
+execute if score $NotEmpty TmpVal matches 0 run scoreboard players set $NotFound TmpVal 1
 
 # If NotFound is 1, then the strings were different, if NotFound is 0, then they were the same, if they were different, remove the last element and try again
 # Move the last element to the first, and recurse if the strings did not match
