@@ -12,7 +12,6 @@ execute store success score $NotFound TmpVal run data modify storage baseshare:t
 
 # If NotFound is 1, then the strings were different, if NotFound is 0, then they were the same, if they were different, remove the last element and try again
 # Move the last element to the first, and recurse if the strings did not match
-# execute if score $NotFound TmpVal matches 1 run data modify storage baseshare:tmp Search insert 0 from storage baseshare:tmp Search[-1]
 execute if score $NotFound TmpVal matches 1 run data remove storage baseshare:tmp Search[-1]
 
 # Check if there are no bases left
