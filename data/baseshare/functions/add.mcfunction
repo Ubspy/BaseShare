@@ -27,6 +27,7 @@ function baseshare:orderplayers
 
 # Now we want to check and see if this base already exists
 data modify storage baseshare:tmp Search set from storage baseshare:bases Players[-1].Bases
+
 # TODO: We need the base name at baseshare:tmp NewBaseName
 function baseshare:searchbases
 
@@ -38,9 +39,11 @@ execute if score $NotFound TmpVal matches 0 run tellraw @s [{"text":"Could not a
 
 # Create NewBase that holds the stuff we want for a new base
 # TODO: I don't know if we should have all this in a new function, but so far I'm keeping it like this
-execute if score $NotFound TmpVal matches 1 run data modify storage baseshare:tmp NewBase.X set from entity @s Pos[0]
-execute if score $NotFound TmpVal matches 1 run data modify storage baseshare:tmp NewBase.Y set from entity @s Pos[1]
-execute if score $NotFound TmpVal matches 1 run data modify storage baseshare:tmp NewBase.Z set from entity @s Pos[2]
+# Why not just set the data directly? Well it will store the long decmials in Pos, we want just the integers
+# we can use store to make sure it only stores them as integers
+execute if score $NotFound TmpVal matches 1 store result storage baseshare:tmp NewBase.X int 1 run data get entity @s Pos[0]
+execute if score $NotFound TmpVal matches 1 store result storage baseshare:tmp NewBase.Y int 1 run data get entity @s Pos[1]
+execute if score $NotFound TmpVal matches 1 store result storage baseshare:tmp NewBase.Z int 1 run data get entity @s Pos[2]
 execute if score $NotFound TmpVal matches 1 run data modify storage baseshare:tmp NewBase.BaseName set from storage baseshare:tmp NewBaseName
 
 # Add this to the bases array the player owns

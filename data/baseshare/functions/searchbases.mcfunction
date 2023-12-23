@@ -10,6 +10,10 @@ data modify storage baseshare:tmp Compare set from storage baseshare:tmp NewBase
 # Try to write the last element of the search array to this compare register, it will fail if they're the same string
 execute store success score $NotFound TmpVal run data modify storage baseshare:tmp Compare set from storage baseshare:tmp Search[-1].BaseName
 
+# $NotFound will be zero if Search is empty, because it fails to find Search[1], this will
+# cause our code to think that the base exists, when really, it doesn't
+execute unless data storage baseshare:tmp Search[-1] run scoreboard players set $NotFound TmpVal 1
+
 # If NotFound is 1, then the strings were different, if NotFound is 0, then they were the same, if they were different, remove the last element and try again
 # Move the last element to the first, and recurse if the strings did not match
 execute if score $NotFound TmpVal matches 1 run data remove storage baseshare:tmp Search[-1]
