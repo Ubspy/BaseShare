@@ -1,0 +1,2 @@
+$execute if score $entries TmpVal matches ..4 run data modify storage baseshare:tmp EntriesToAdd append value '{"text": "$(BaseName)\\\\nX: $(X), Z: $(Z)\\\\n\\\\n", "bold": false, "italic": false, "color": "reset"}'
+$execute if score $entries TmpVal matches 5.. run data modify storage baseshare:tmp EntriesToAdd append value '{"text": "$(BaseName)\\\\nX: $(X), Z: $(Z)", "bold": false, "italic": false, "color": "reset"}'
