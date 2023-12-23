@@ -1,1 +1,5 @@
-$data modify storage baseshare:tmp NewPages append value '[$(0), $(1), $(2), $(3), $(4)]'
+$execute if score $entries TmpVal matches 0 run data modify storage baseshare:tmp NewPages append value '[$(0)]'
+$execute if score $entries TmpVal matches 1 run data modify storage baseshare:tmp NewPages append value '[$(0), $(1)]'
+$execute if score $entries TmpVal matches 2 run data modify storage baseshare:tmp NewPages append value '[$(0), $(1), $(2)]'
+$execute if score $entries TmpVal matches 3 run data modify storage baseshare:tmp NewPages append value '[$(0), $(1), $(2), $(3)]'
+$execute if score $entries TmpVal matches 4.. run data modify storage baseshare:tmp NewPages append value '[$(0), $(1), $(2), $(3), $(4)]'
