@@ -2,7 +2,7 @@
 scoreboard players set $entries TmpVal 1
 
 # Add header to the page for this user
-tellraw @s [{"text": "Player", "bold": true,"italic": true, "underlined": true}]
+tellraw @s [{"text": "Player", "bold": true,"italic": true, "underlined": true, "color": "gold"}]
 
 # Add all the bases from this user to the page(s)
 function baseshare:bookaddbases
