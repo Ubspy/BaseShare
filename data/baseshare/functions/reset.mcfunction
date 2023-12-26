@@ -1,7 +1,8 @@
-execute run scoreboard objectives remove BaseSharePlayers
-execute run scoreboard objectives remove TmpVal
+scoreboard objectives remove BaseSharePlayers
+scoreboard objectives remove TmpVal
+scoreboard objectives remove PrintMutex
 
-execute run data remove storage baseshare:bases Players
-execute run data remove storage baseshare:tmp NewPlayer
+data remove storage baseshare:bases Players
+data remove storage baseshare:tmp NewPlayer
 
 function baseshare:load
