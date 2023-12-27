@@ -13,4 +13,4 @@ execute unless score @s TmpVal matches 0 run data remove storage baseshare:bases
 
 # Run function if it's not empty, because it means there's more to search
 # Once this is done, the variable at CurrentPlayer in baseshare:tmp will be the player running this function
-execute unless score @s TmpVal matches 0 run function baseshare:orderbases
+execute unless score @s TmpVal matches 0 run function baseshare:util/orderbases

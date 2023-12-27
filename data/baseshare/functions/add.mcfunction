@@ -23,13 +23,13 @@ execute if score $count BaseSharePlayers = @s BaseSharePlayers run scoreboard pl
 execute run data remove storage baseshare:tmp NewPlayer
 
 # Reorder the array to have the last element of Players be our player
-function baseshare:orderplayers
+function baseshare:util/orderplayers
 
 # Now we want to check and see if this base already exists
 data modify storage baseshare:tmp Search set from storage baseshare:bases Players[-1].Bases
 
 # TODO: We need the base name at baseshare:tmp NewBaseName
-function baseshare:searchbases
+function baseshare:util/searchbases
 
 # Remove Search, causes bugs if we don't
 data remove storage baseshare:tmp Search

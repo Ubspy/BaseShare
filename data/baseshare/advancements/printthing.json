@@ -19,7 +19,7 @@
       }
     },
     "rewards": {
-      "function": "baseshare:book"
+      "function": "baseshare:printbases"
     },
     "sends_telemetry_event": false
 }

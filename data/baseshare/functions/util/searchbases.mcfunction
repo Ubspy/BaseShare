@@ -22,6 +22,6 @@ execute if score $NotFound TmpVal matches 1 run data remove storage baseshare:tm
 execute store success score $NotEmpty TmpVal run data get storage baseshare:tmp Search[-1]
 
 # Only recurse if both $NotFound is 0, and if there's more to search
-execute if score $NotEmpty TmpVal matches 1 run execute if score $NotFound TmpVal matches 1 run function baseshare:searchbases
+execute if score $NotEmpty TmpVal matches 1 run execute if score $NotFound TmpVal matches 1 run function baseshare:util/searchbases
 
 # After: $NotFound at TmpVal will be 0 if the match was in fact found, otherwise it will remain 1

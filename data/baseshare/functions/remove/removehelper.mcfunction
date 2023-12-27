@@ -2,11 +2,12 @@
 function baseshare:orderarray
 
 # TODO: Get base name to remove and put it at baseshare:tmp NewBaseName
-data modify storage baseshare:tmp Search set from storage baseshare:basesearch Players[-1].Bases
+data modify storage baseshare:tmp Search set from storage baseshare:bases Players[-1].Bases
 
-function baseshare:searchbases
+function baseshare:util/searchbases
 
-execute if score $NotFound TmpVal matches 0 run function baseshare:orderbases
+execute if score $NotFound TmpVal matches 1 run tellraw @s "Not Found :("
+execute if score $NotFound TmpVal matches 0 run function baseshare:util/orderbases
 
 # Now Search in baseshare:tmp will have the base to delete as the last one, if we found the one to delete,
 # do so and say so, if not throw error msg

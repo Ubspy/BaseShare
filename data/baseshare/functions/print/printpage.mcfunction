@@ -5,7 +5,7 @@
 
 # Align players
 execute store result score $pageTmp TmpVal run scoreboard players get $atPage TmpVal
-execute if score $printVal TmpVal matches 1 run function baseshare:alignbookplayers
+execute if score $printVal TmpVal matches 1 run function baseshare:print/alignplayers
 
 execute if score $printVal TmpVal matches 1 run tellraw @s "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
 execute if score $printVal TmpVal matches 1 run tellraw @s [{"text": "Player", "bold": true,"italic": true, "underlined": true, "color": "gold"}]
@@ -18,4 +18,4 @@ scoreboard players add $printVal TmpVal 1
 
 execute if score $printVal TmpVal matches 10 run tellraw @s "<-    ->"
 execute if score $printVal TmpVal matches ..7 run data remove storage baseshare:tmp Players[-1].Bases[-1]
-execute if score $printVal TmpVal matches ..9 run function baseshare:bookprintpage
+execute if score $printVal TmpVal matches ..9 run function baseshare:print/printpage

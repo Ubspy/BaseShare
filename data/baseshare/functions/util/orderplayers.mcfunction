@@ -9,4 +9,4 @@ execute unless score @s TmpVal = @s BaseSharePlayers run data remove storage bas
 
 # Run function if it's not empty, because it means there's more to search
 # Once this is done, the variable at CurrentPlayer in baseshare:tmp will be the player running this function
-execute unless score @s TmpVal = @s BaseSharePlayers run function baseshare:orderplayers
+execute unless score @s TmpVal = @s BaseSharePlayers run function baseshare:util/orderplayers
