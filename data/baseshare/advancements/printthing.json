@@ -1,25 +1,25 @@
 {
-    "criteria": {
-      "requirement": {
-        "trigger": "minecraft:item_used_on_block",
-        "conditions": {
-          "location": [
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "block": {
-                  "blocks": [
-                    "minecraft:beacon"
-                  ]
-                }
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "block": {
+                "blocks": [
+                  "minecraft:beacon"
+                ]
               }
             }
-          ]
-        }
+          }
+        ]
       }
-    },
+    }
+  },
     "rewards": {
-      "function": "baseshare:printbases"
+      "function": "baseshare:blocks/base_beacon/used"
     },
     "sends_telemetry_event": false
 }
