@@ -1,0 +1,2 @@
+setblock ~ ~-1 ~ air destroy
+tellraw @p {"text": "[BaseBeacon]: Hey! No cheating! The Base Beacon uses an actual beacon as its base, but doesn't take a nether star to craft. No cheating the system :)"}
