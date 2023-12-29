@@ -1,0 +1,20 @@
+{
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:item_frame",
+            "functions": [
+              {
+                "function": "minecraft:set_nbt",
+                "tag": "{display:{Name:'{\"text\":\"Base Beacon\", \"italic\":false}'}, CustomModelData:6573895, EntityTag:{Invulnerable:1b, Invisible:1b, Fixed:1b, Silent:1b, Tags:[\"baseshare.item_frame\", \"baseshare.base_beacon\"], Facing:1b}}"
+              }         
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  
