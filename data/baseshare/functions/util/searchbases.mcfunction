@@ -1,7 +1,6 @@
 # Recursive search function
 # Prereqs: baseshare:tmp NewBaseName needs to contain the string for the new base,
 # and the correct bases array needs to be copied to baseshare:tmp Search,
-# scoreboard TmpVal user $NotFound set to 1
 
 # Copy the NewBaseName data to a temporary Compare register
 data remove storage baseshare:tmp Compare

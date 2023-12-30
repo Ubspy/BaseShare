@@ -4,7 +4,7 @@ data modify storage baseshare:tmp Players set from storage baseshare:bases Playe
 
 scoreboard players set $printVal TmpVal 1
 
-schedule function baseshare:print/resetpage 10s replace
+schedule function baseshare:print/resetpage 5s replace
 
 scoreboard players add $atPage TmpVal 1
 

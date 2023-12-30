@@ -13,7 +13,7 @@ kill @s
 data modify storage baseshare:tmp NewBaseName set string entity @e[sort=nearest, tag=baseshare.base_beacon_name, limit=1] CustomName 9 -2
 
 # Remove this base from the list
-execute as @e[sort=nearest, tag=baseshare.base_beacon_name, limit=1, distance=..10] run execute if entity @s[tag=baseshare.named] as @p run execute as @p run function baseshare:remove
+execute as @s[tag=baseshare.named] run execute as @p run function baseshare:remove
 
 # Kill the name display on top of it
 kill @e[type=item_display, limit=1, distance=1, tag=baseshare.base_beacon_name]
