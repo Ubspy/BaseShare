@@ -9,6 +9,10 @@ execute as @e[sort=nearest, tag=baseshare.base_beacon, limit=1] run execute at @
 # Check for a sign at each side and of top of the base beacon, if we find one then
 # we will rename the beacon and run add
 execute as @e[sort=nearest, tag=baseshare.base_beacon, limit=1] at @s if data block ~1 ~ ~ front_text run execute positioned ~1 ~ ~ run function baseshare:blocks/base_beacon/name
+execute as @e[sort=nearest, tag=baseshare.base_beacon, limit=1] at @s if data block ~-1 ~ ~ front_text run execute positioned ~-1 ~ ~ run function baseshare:blocks/base_beacon/name
+execute as @e[sort=nearest, tag=baseshare.base_beacon, limit=1] at @s if data block ~ ~ ~1 front_text run execute positioned ~ ~ ~1 run function baseshare:blocks/base_beacon/name
+execute as @e[sort=nearest, tag=baseshare.base_beacon, limit=1] at @s if data block ~ ~ ~-1 front_text run execute positioned ~ ~ ~-1 run function baseshare:blocks/base_beacon/name
+execute as @e[sort=nearest, tag=baseshare.base_beacon, limit=1] at @s if data block ~ ~1 ~ front_text run execute positioned ~ ~1 ~ run function baseshare:blocks/base_beacon/name
 
 # Run print bases for this user
 function baseshare:printbases
